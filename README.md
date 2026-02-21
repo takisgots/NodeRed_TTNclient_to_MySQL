@@ -8,10 +8,10 @@ Install Node‑RED
 Open a terminal (PowerShell or Git Bash):
 
 Code:
-
+```
 npm install -g --unsafe-perm node-red
 (This gives you a fresh Node‑RED installation.)
-
+```
 
 📥 2. Clone your GitHub repository
 
@@ -21,17 +21,18 @@ Most people use:
 
 Code:
 
-C:\Users\YourUser\.node-red
+```
+C:\Users\<YourUser>\.node-red
 (If that folder already exists, rename or delete it.)
+```
 
 Then clone your repo into that location:
 
 Code:
-
+```
 cd C:\Users\<YourUser>
-
 git clone https://github.com/<yourname>/<repo>.git .node-red
-
+```
 Now your .node-red folder contains your flows and package.json.
 
 
@@ -40,10 +41,10 @@ Now your .node-red folder contains your flows and package.json.
 Inside the .node-red folder:
 
 Code:
-
+```
 cd C:\Users\<YourUser>\.node-red
-
 npm install
+```
 
 (This installs all the nodes listed in your package.json.)
 
