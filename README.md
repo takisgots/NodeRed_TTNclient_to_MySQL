@@ -21,7 +21,7 @@ Most people use:
 
 Code:
 
-C:\Users\<YourUser>\.node-red
+C:\Users\YourUser\.node-red
 (If that folder already exists, rename or delete it.)
 
 Then clone your repo into that location:
