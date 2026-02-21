@@ -1,0 +1,1444 @@
+[
+    {
+        "id": "a6e8139129254dfa",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a8603bd875efe227",
+        "type": "tab",
+        "label": "web-request-TTS",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "25d870779775d27b",
+        "type": "tab",
+        "label": "web-request-MQTT broker",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "56a2218088efe1c0",
+        "type": "tab",
+        "label": "web-request-TTS",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a0dc01a7ea27118e",
+        "type": "tab",
+        "label": "web-request-TTS",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "54ab140c3ef71169",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "eu1.cloud.thethings.network.crt",
+        "keyname": "eu1.cloud.thethings.network.cer",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "446f428c3c5feeb5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "eu1.cloud.thethings.network",
+        "port": "8883",
+        "tls": "",
+        "clientid": "noderedclient",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "3",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a90417723433ad41",
+        "type": "MySQLdatabase",
+        "name": "TTN MQTT DATA",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "loradata",
+        "tz": "+02:00",
+        "charset": "UTF8"
+    },
+    {
+        "id": "6cad0f902b55742e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ecd7e10d04189e11",
+        "type": "ui_tab",
+        "name": "MQTT Readings",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6635d2432ebab077",
+        "type": "ui_group",
+        "name": "MyReadings",
+        "tab": "ecd7e10d04189e11",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e4dafef02b25c3f6",
+        "type": "ui_group",
+        "name": "Historical Data",
+        "tab": "ecd7e10d04189e11",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "5653f0a76e54ff9b",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "92bb3effa7ef08af",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "f674f49dc9656b39",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "5653f0a76e54ff9b",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "92bb3effa7ef08af",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b9edfed1719abf55",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "f674f49dc9656b39",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f94614fdec64c296",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.58",
+        "port": "1883",
+        "tls": "",
+        "clientid": "node-red-vclient-priv",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ccd2a4cf7ec4934c",
+        "type": "MySQLdatabase",
+        "name": "LOCAL TTN MQTT DATA ",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "prttnmqtt_data",
+        "tz": "+2",
+        "charset": "UTF8"
+    },
+    {
+        "id": "eeb0cfd216e7360e",
+        "type": "mqtt-broker",
+        "name": "My Private Lorawan",
+        "broker": "192.168.2.11",
+        "port": "1883",
+        "tls": "",
+        "clientid": "node-red-vclient-priv",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b20d26768f8c2a09",
+        "type": "debug",
+        "z": "a6e8139129254dfa",
+        "name": "debug 13",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "d0a05a14fbcbcaeb",
+        "type": "function",
+        "z": "a6e8139129254dfa",
+        "name": "function 5",
+        "func": "let data = msg.payload; // Assuming the JSON is already parsed\n\n// Extract desired fields\nlet deviceId = data.end_device_ids.device_id;\nlet dev_eui = data.end_device_ids.dev_eui;\nlet f_port = data.uplink_message.f_port;\nlet applicationId = data.end_device_ids.application_ids.application_id;\nlet sats = data.uplink_message.decoded_payload.sats;\nlet lat = data.uplink_message.decoded_payload.lat;\nlet lon = data.uplink_message.decoded_payload.lon;\nlet alt = data.uplink_message.decoded_payload.alt;\nlet hdop = data.uplink_message.decoded_payload.hdop;\nlet value1 = data.uplink_message.decoded_payload.value1;\nlet value2 = data.uplink_message.f_cnt;\n//let value2 = data.uplink_message.decoded_payload.value2;\nlet rssi = data.uplink_message.rx_metadata[0].rssi;\nlet snr = data.uplink_message.rx_metadata[0].snr;\nlet gatewayId = data.uplink_message.rx_metadata[0].gateway_ids.gateway_id;\nlet bandwidth = data.uplink_message.settings.data_rate.lora.bandwidth;\nlet spreadingFactor = data.uplink_message.settings.data_rate.lora.spreading_factor;\nlet frequency = data.uplink_message.settings.frequency;\nlet channelindex = data.uplink_message.rx_metadata[0].channel_index;\nlet consumedairtime = data.uplink_message.consumed_airtime;\n\n// Construct a new message with extracted data\nmsg.payload = {\n    deviceId: deviceId,\n\tdev_eui: dev_eui,\n\tf_port: f_port,\n    applicationId: applicationId,\n\tsats: sats,\n\tlat: lat,\n\tlon: lon,\n\talt: alt, \n\thdop: hdop, \n\tvalue1: value1, \n\tvalue2: value2,\n\trssi: rssi,\n    snr: snr,\n    gatewayId: gatewayId,\n    bandwidth: bandwidth,\n    spreadingFactor: spreadingFactor,\n\tfrequency: frequency,\n\tchannelindex: channelindex, \n\tconsumedairtime: consumedairtime\n\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "b20d26768f8c2a09",
+                "c8e58079c2a5334e"
+            ]
+        ]
+    },
+    {
+        "id": "5a4eb1d84ec07b09",
+        "type": "debug",
+        "z": "a6e8139129254dfa",
+        "name": "debug 14",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c8e58079c2a5334e",
+        "type": "function",
+        "z": "a6e8139129254dfa",
+        "name": "function 6",
+        "func": "//let data = msg.payload;\n\n// Note: Added dev_eui, f_port, and frequency to the list\n//let query = `\n//  INSERT INTO device_telemetry (\n//    deviceId, dev_eui, applicationId, f_port, \n//    sats, lat, lon, alt,\n//    hdop, value1, value2, rssi, snr,\n//    gatewayId, bandwidth, spreadingFactor, frequency, channelindex, consumedairtime\n//  ) VALUES (\n//    '${data.deviceId}', '${data.dev_eui}', '${data.applicationId}', ${data.f_port},\n//    ${data.sats}, ${data.lat}, ${data.lon}, ${data.alt}, \n//    ${data.hdop}, ${data.value1}, ${data.value2}, ${data.rssi}, ${data.snr}, \n//    '${data.gatewayId}', ${data.bandwidth}, ${data.spreadingFactor}, '${data.frequency}', \n//    ${data.channelindex}, '${data.consumedairtime}'\n//  )\n//`;\n\n//msg.topic = query;\n//return msg;\n\nlet data = msg.payload;\n\nmsg.topic = `INSERT INTO device_telemetry (\n    deviceId, dev_eui, applicationId, f_port, \n    sats, lat, lon, alt,\n    hdop, value1, value2, rssi, snr,\n    gatewayId, bandwidth, spreadingFactor, frequency, channelindex, consumedairtime\n  ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;\n\n// The MySQL node will automatically turn undefined into NULL safely here\nmsg.payload = [\n    data.deviceId, data.dev_eui, data.applicationId, data.f_port,\n    data.sats, data.lat, data.lon, data.alt,\n    data.hdop, data.value1, data.value2, data.rssi, data.snr,\n    data.gatewayId, data.bandwidth, data.spreadingFactor, data.frequency, \n    data.channelindex, data.consumedairtime\n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 520,
+        "wires": [
+            [
+                "75ddf413a7648365",
+                "1377781dc8725dce"
+            ]
+        ]
+    },
+    {
+        "id": "75ddf413a7648365",
+        "type": "mysql",
+        "z": "a6e8139129254dfa",
+        "mydb": "a90417723433ad41",
+        "name": "MyXamppDatabase",
+        "x": 690,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f631c739aff7630",
+        "type": "mqtt in",
+        "z": "a6e8139129254dfa",
+        "name": "",
+        "topic": "v3/myprivatelorawanapp/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "eeb0cfd216e7360e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "5a4eb1d84ec07b09",
+                "d0a05a14fbcbcaeb"
+            ]
+        ]
+    },
+    {
+        "id": "1377781dc8725dce",
+        "type": "debug",
+        "z": "a6e8139129254dfa",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "c64bf5277e58819c",
+        "type": "mqtt in",
+        "z": "a8603bd875efe227",
+        "name": "",
+        "topic": "v3/panostestapp@ttn/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "1c330a4c3b088ac7",
+                "1ae84125d8afa4c0"
+            ]
+        ]
+    },
+    {
+        "id": "e3eff80b791a8c43",
+        "type": "debug",
+        "z": "a8603bd875efe227",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "1c330a4c3b088ac7",
+        "type": "function",
+        "z": "a8603bd875efe227",
+        "name": "function 1",
+        "func": "let data = msg.payload; // Assuming the JSON is already parsed\n\n// Extract desired fields\nlet deviceId = data.end_device_ids.device_id;\nlet applicationId = data.end_device_ids.application_ids.application_id;\nlet sats = data.uplink_message.decoded_payload.sats;\nlet lat = data.uplink_message.decoded_payload.lat;\nlet lon = data.uplink_message.decoded_payload.lon;\nlet alt = data.uplink_message.decoded_payload.alt;\nlet hdop = data.uplink_message.decoded_payload.hdop;\nlet value1 = data.uplink_message.decoded_payload.value1;\nlet value2 = data.uplink_message.decoded_payload.value2;\nlet rssi = data.uplink_message.rx_metadata[0].rssi;\nlet snr = data.uplink_message.rx_metadata[0].snr;\nlet gatewayId = data.uplink_message.rx_metadata[0].gateway_ids.gateway_id;\nlet bandwidth = data.uplink_message.settings.data_rate.lora.bandwidth;\nlet spreadingFactor = data.uplink_message.settings.data_rate.lora.spreading_factor;\n\n// Construct a new message with extracted data\nmsg.payload = {\n    deviceId: deviceId,\n    applicationId: applicationId,\n\tsats: sats,\n\tlat: lat,\n\tlon: lon,\n\talt: alt, \n\thdop: hdop, \n\tvalue1: value1, \n\tvalue2: value2,\n\trssi: rssi,\n    snr: snr,\n    gatewayId: gatewayId,\n    bandwidth: bandwidth,\n    spreadingFactor: spreadingFactor\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "e3eff80b791a8c43",
+                "3ab60b9da3e028f9"
+            ]
+        ]
+    },
+    {
+        "id": "1ae84125d8afa4c0",
+        "type": "debug",
+        "z": "a8603bd875efe227",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "3ab60b9da3e028f9",
+        "type": "function",
+        "z": "a8603bd875efe227",
+        "name": "function 2",
+        "func": "let data = msg.payload;\n\nlet query = `\n  INSERT INTO uplinks (\n    deviceId, applicationId, sats, lat, lon, alt,\n    hdop, value1, value2, rssi, snr,\n    gatewayId, bandwidth, spreadingFactor\n  ) VALUES (\n    '${data.deviceId}', '${data.applicationId}', ${data.sats}, ${data.lat},\n    ${data.lon}, ${data.alt}, ${data.hdop}, ${data.value1}, ${data.value2},\n    ${data.rssi}, ${data.snr}, '${data.gatewayId}', ${data.bandwidth}, ${data.spreadingFactor}\n  )\n`;\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 380,
+        "wires": [
+            [
+                "b53c8c8adae40b58"
+            ]
+        ]
+    },
+    {
+        "id": "b53c8c8adae40b58",
+        "type": "mysql",
+        "z": "a8603bd875efe227",
+        "mydb": "a90417723433ad41",
+        "name": "MyXamppDatabase",
+        "x": 690,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b16c8b8321a8103c",
+        "type": "mqtt in",
+        "z": "25d870779775d27b",
+        "name": "MQTT connection to topic Temperature",
+        "topic": "iotfrontier/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "3076be62a6feb20b",
+                "6910f386063e952f",
+                "04a4e0865d2857fd",
+                "8007af372d7107b9"
+            ]
+        ]
+    },
+    {
+        "id": "3076be62a6feb20b",
+        "type": "debug",
+        "z": "25d870779775d27b",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9c15702de8bb9226",
+        "type": "mqtt in",
+        "z": "25d870779775d27b",
+        "name": "MQTT connection to topic Humidity",
+        "topic": "iotfrontier/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 280,
+        "wires": [
+            [
+                "52140b4f1086af31",
+                "6910f386063e952f",
+                "e7f243a8273d2a55",
+                "e6d0631f758974ca"
+            ]
+        ]
+    },
+    {
+        "id": "52140b4f1086af31",
+        "type": "debug",
+        "z": "25d870779775d27b",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "72e457cc7660da1b",
+        "type": "comment",
+        "z": "25d870779775d27b",
+        "name": "Comment on how to create the table in my DB",
+        "info": "CREATE TABLE environment_data (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    temperature FLOAT,\n    humidity FLOAT,\n    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,\n    device_id VARCHAR(50)\n);",
+        "x": 270,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6910f386063e952f",
+        "type": "join",
+        "z": "25d870779775d27b",
+        "name": "Convert single values to a JSON string ",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "5",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 740,
+        "y": 260,
+        "wires": [
+            [
+                "edd3e1756d92c54f",
+                "193eee5651bf015a"
+            ]
+        ]
+    },
+    {
+        "id": "edd3e1756d92c54f",
+        "type": "debug",
+        "z": "25d870779775d27b",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "193eee5651bf015a",
+        "type": "function",
+        "z": "25d870779775d27b",
+        "name": "Take JSON data format them & store them in the DB",
+        "func": "const temp = msg.payload[\"iotfrontier/temperature\"];\nconst hum = msg.payload[\"iotfrontier/humidity\"];\nconst timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');\nconst device = \"ESP32-01\"; // Optional: customize or extract from msg\n\n//msg.topic = `INSERT INTO environment_data (temperature, humidity, timestamp, device_id)\n//             VALUES (${temp}, ${hum}, '${timestamp}', '${device}')`;\n\n//this is to hold only the last 100 records\nmsg.topic = `\n  INSERT INTO environment_data (temperature, humidity, timestamp, device_id)\n  VALUES (${temp}, ${hum}, '${timestamp}', '${device}');\n  DELETE FROM environment_data\n  WHERE id NOT IN (\n    SELECT id FROM (\n      SELECT id FROM environment_data ORDER BY timestamp DESC LIMIT 100\n    ) AS recent\n  );\n`;\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 160,
+        "wires": [
+            [
+                "c0bbe44b0506dcf8"
+            ]
+        ]
+    },
+    {
+        "id": "99ec48cd44d97450",
+        "type": "comment",
+        "z": "25d870779775d27b",
+        "name": "This communicates with \"DHT22_Esp32_MQTT_NodeRED_Panos_MQTT_Cred\" WokWi project",
+        "info": "This communicates with \n\"DHT22_Esp32_MQTT_NodeRED_Panos_MQTT_Cred\" WokWi project",
+        "x": 430,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "159998606c82e4bc",
+        "type": "inject",
+        "z": "25d870779775d27b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "1dcc01dc1d0c3718"
+            ]
+        ]
+    },
+    {
+        "id": "1dcc01dc1d0c3718",
+        "type": "function",
+        "z": "25d870779775d27b",
+        "name": "function 3",
+        "func": "msg.payload = null; // Clear the timestamp from inject\nmsg.topic = \"SELECT timestamp, temperature FROM environment_data ORDER BY timestamp DESC LIMIT 100\";\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 600,
+        "wires": [
+            [
+                "fe89745fc4f08f92"
+            ]
+        ]
+    },
+    {
+        "id": "c1f3e8b178bd7d1c",
+        "type": "debug",
+        "z": "25d870779775d27b",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "0396350964d73bbf",
+        "type": "function",
+        "z": "25d870779775d27b",
+        "name": "function 4",
+        "func": "let rows = msg.payload;\n\nif (!Array.isArray(rows) || rows.length === 0) {\n    node.warn(\"No data returned from MySQL\");\n    return null;\n}\n\n// Reverse the array so the chart displays data from oldest (left) to newest (right)\nrows.reverse();\n\nlet data = [];\nlet labels = [];\n\nfor (let row of rows) {\n    // 1. Create a Date object from the MySQL DATETIME string\n    //    We assume the timestamp is in the same timezone as Node-RED, or is UTC.\n    //    If your database stores UTC, you might need a more robust parsing method.\n    let date = new Date(row.timestamp);\n    \n    // 2. Get the JavaScript timestamp (milliseconds since epoch)\n    //    The Chart node uses this for correct time-series plotting.\n    labels.push(date.getTime());\n    \n    // 3. Collect the temperature data\n    data.push(parseFloat(row.temperature));\n}\n\n// The Chart node requires the payload in this specific format for multiple series,\n// even if you only have one.\nmsg.payload = {\n    series: [\"Temperature\"],\n    data: [data],\n    labels: labels // This now contains JavaScript timestamps\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "c1f3e8b178bd7d1c",
+                "27597acd57010c42"
+            ]
+        ]
+    },
+    {
+        "id": "a9c469563e165fbc",
+        "type": "debug",
+        "z": "25d870779775d27b",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "c0bbe44b0506dcf8",
+        "type": "mysql",
+        "z": "25d870779775d27b",
+        "mydb": "a90417723433ad41",
+        "name": "MyXamppDatabase",
+        "x": 1090,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fe89745fc4f08f92",
+        "type": "mysql",
+        "z": "25d870779775d27b",
+        "mydb": "a90417723433ad41",
+        "name": "MyXamppDatabase",
+        "x": 430,
+        "y": 480,
+        "wires": [
+            [
+                "0396350964d73bbf",
+                "a9c469563e165fbc"
+            ]
+        ]
+    },
+    {
+        "id": "e6d0631f758974ca",
+        "type": "ui_text",
+        "z": "25d870779775d27b",
+        "group": "6635d2432ebab077",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "22",
+        "color": "#d07c7c",
+        "x": 640,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "8007af372d7107b9",
+        "type": "ui_text",
+        "z": "25d870779775d27b",
+        "group": "6635d2432ebab077",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "22",
+        "color": "#a65959",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e7f243a8273d2a55",
+        "type": "ui_gauge",
+        "z": "25d870779775d27b",
+        "name": "",
+        "group": "6635d2432ebab077",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "04a4e0865d2857fd",
+        "type": "ui_gauge",
+        "z": "25d870779775d27b",
+        "name": "",
+        "group": "6635d2432ebab077",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#12ca12",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 670,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "27597acd57010c42",
+        "type": "ui-chart",
+        "z": "25d870779775d27b",
+        "group": "b9edfed1719abf55",
+        "name": "Chart",
+        "label": "chart",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "{HH}:{mm}:{ss}",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "100",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 770,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f1d7ea1199176d9",
+        "type": "mqtt in",
+        "z": "56a2218088efe1c0",
+        "name": "",
+        "topic": "v3/panostestapp@ttn/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "879c7a6fca1df97d",
+                "e4d13b734f2405ad"
+            ]
+        ]
+    },
+    {
+        "id": "4208c25552a5a375",
+        "type": "debug",
+        "z": "56a2218088efe1c0",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "879c7a6fca1df97d",
+        "type": "function",
+        "z": "56a2218088efe1c0",
+        "name": "function 1",
+        "func": "let data = msg.payload; // Assuming the JSON is already parsed\n\n// Extract desired fields\nlet deviceId = data.end_device_ids.device_id;\nlet applicationId = data.end_device_ids.application_ids.application_id;\nlet sats = data.uplink_message.decoded_payload.sats;\nlet lat = data.uplink_message.decoded_payload.lat;\nlet lon = data.uplink_message.decoded_payload.lon;\nlet alt = data.uplink_message.decoded_payload.alt;\nlet hdop = data.uplink_message.decoded_payload.hdop;\nlet value1 = data.uplink_message.decoded_payload.value1;\nlet value2 = data.uplink_message.decoded_payload.value2;\nlet rssi = data.uplink_message.rx_metadata[0].rssi;\nlet snr = data.uplink_message.rx_metadata[0].snr;\nlet gatewayId = data.uplink_message.rx_metadata[0].gateway_ids.gateway_id;\nlet bandwidth = data.uplink_message.settings.data_rate.lora.bandwidth;\nlet spreadingFactor = data.uplink_message.settings.data_rate.lora.spreading_factor;\n\n// Construct a new message with extracted data\nmsg.payload = {\n    deviceId: deviceId,\n    applicationId: applicationId,\n\tsats: sats,\n\tlat: lat,\n\tlon: lon,\n\talt: alt, \n\thdop: hdop, \n\tvalue1: value1, \n\tvalue2: value2,\n\trssi: rssi,\n    snr: snr,\n    gatewayId: gatewayId,\n    bandwidth: bandwidth,\n    spreadingFactor: spreadingFactor\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "4208c25552a5a375",
+                "2b69b666e320cde1"
+            ]
+        ]
+    },
+    {
+        "id": "e4d13b734f2405ad",
+        "type": "debug",
+        "z": "56a2218088efe1c0",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2b69b666e320cde1",
+        "type": "function",
+        "z": "56a2218088efe1c0",
+        "name": "function 2",
+        "func": "let data = msg.payload;\n\nlet query = `\n  INSERT INTO uplinks (\n    deviceId, applicationId, sats, lat, lon, alt,\n    hdop, value1, value2, rssi, snr,\n    gatewayId, bandwidth, spreadingFactor\n  ) VALUES (\n    '${data.deviceId}', '${data.applicationId}', ${data.sats}, ${data.lat},\n    ${data.lon}, ${data.alt}, ${data.hdop}, ${data.value1}, ${data.value2},\n    ${data.rssi}, ${data.snr}, '${data.gatewayId}', ${data.bandwidth}, ${data.spreadingFactor}\n  )\n`;\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 380,
+        "wires": [
+            [
+                "5a675704faffb093"
+            ]
+        ]
+    },
+    {
+        "id": "5a675704faffb093",
+        "type": "mysql",
+        "z": "56a2218088efe1c0",
+        "mydb": "a90417723433ad41",
+        "name": "Store to myxampp database system (TTN)",
+        "x": 770,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0943b18fe3a480c1",
+        "type": "mqtt in",
+        "z": "56a2218088efe1c0",
+        "name": "",
+        "topic": "v3/panostestapp@ttn/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15541d83bbdcea40",
+        "type": "debug",
+        "z": "56a2218088efe1c0",
+        "name": "debug 13",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 140,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "b4627bc6b7744306",
+        "type": "function",
+        "z": "56a2218088efe1c0",
+        "name": "function 5",
+        "func": "let data = msg.payload; // Assuming the JSON is already parsed\n\n// Extract desired fields\nlet deviceId = data.end_device_ids.device_id;\nlet applicationId = data.end_device_ids.application_ids.application_id;\nlet sats = data.uplink_message.decoded_payload.sats;\nlet lat = data.uplink_message.decoded_payload.lat;\nlet lon = data.uplink_message.decoded_payload.lon;\nlet alt = data.uplink_message.decoded_payload.alt;\nlet hdop = data.uplink_message.decoded_payload.hdop;\nlet value1 = data.uplink_message.decoded_payload.value1;\nlet value2 = data.uplink_message.decoded_payload.value2;\nlet rssi = data.uplink_message.rx_metadata[0].rssi;\nlet snr = data.uplink_message.rx_metadata[0].snr;\nlet gatewayId = data.uplink_message.rx_metadata[0].gateway_ids.gateway_id;\nlet bandwidth = data.uplink_message.settings.data_rate.lora.bandwidth;\nlet spreadingFactor = data.uplink_message.settings.data_rate.lora.spreading_factor;\n\n// Construct a new message with extracted data\nmsg.payload = {\n    deviceId: deviceId,\n    applicationId: applicationId,\n\tsats: sats,\n\tlat: lat,\n\tlon: lon,\n\talt: alt, \n\thdop: hdop, \n\tvalue1: value1, \n\tvalue2: value2,\n\trssi: rssi,\n    snr: snr,\n    gatewayId: gatewayId,\n    bandwidth: bandwidth,\n    spreadingFactor: spreadingFactor\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 660,
+        "wires": [
+            [
+                "15541d83bbdcea40",
+                "d9556cf07599fb9a"
+            ]
+        ]
+    },
+    {
+        "id": "071b675588648f5e",
+        "type": "debug",
+        "z": "56a2218088efe1c0",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "d9556cf07599fb9a",
+        "type": "function",
+        "z": "56a2218088efe1c0",
+        "name": "function 6",
+        "func": "let data = msg.payload;\n\nlet query = `\n  INSERT INTO uplinks (\n    deviceId, applicationId, sats, lat, lon, alt,\n    hdop, value1, value2, rssi, snr,\n    gatewayId, bandwidth, spreadingFactor\n  ) VALUES (\n    '${data.deviceId}', '${data.applicationId}', ${data.sats}, ${data.lat},\n    ${data.lon}, ${data.alt}, ${data.hdop}, ${data.value1}, ${data.value2},\n    ${data.rssi}, ${data.snr}, '${data.gatewayId}', ${data.bandwidth}, ${data.spreadingFactor}\n  )\n`;\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 860,
+        "wires": [
+            [
+                "bb45038179015080"
+            ]
+        ]
+    },
+    {
+        "id": "daa8fe06ca867124",
+        "type": "mqtt in",
+        "z": "56a2218088efe1c0",
+        "name": "",
+        "topic": "v3/panosprivateapp/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f94614fdec64c296",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 480,
+        "wires": [
+            [
+                "071b675588648f5e",
+                "b4627bc6b7744306"
+            ]
+        ]
+    },
+    {
+        "id": "bb45038179015080",
+        "type": "mysql",
+        "z": "56a2218088efe1c0",
+        "mydb": "ccd2a4cf7ec4934c",
+        "name": "Store to myxampp database system (PRIVATE)",
+        "x": 720,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2504598ee2294f88",
+        "type": "mqtt in",
+        "z": "a0dc01a7ea27118e",
+        "name": "",
+        "topic": "v3/panostestapp@ttn/devices/+/up",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "446f428c3c5feeb5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "3eca71c047247a23",
+                "5b8a7d080085b26c"
+            ]
+        ]
+    },
+    {
+        "id": "dbd46a78859a2f16",
+        "type": "debug",
+        "z": "a0dc01a7ea27118e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 180,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3eca71c047247a23",
+        "type": "function",
+        "z": "a0dc01a7ea27118e",
+        "name": "function 1",
+        "func": "let data = msg.payload; // Assuming the JSON is already parsed\n\n// Extract desired fields\nlet deviceId = data.end_device_ids.device_id;\nlet dev_eui = data.end_device_ids.dev_eui;\nlet f_port = data.uplink_message.f_port\nlet applicationId = data.end_device_ids.application_ids.application_id;\nlet sats = data.uplink_message.decoded_payload.sats;\nlet lat = data.uplink_message.decoded_payload.lat;\nlet lon = data.uplink_message.decoded_payload.lon;\nlet alt = data.uplink_message.decoded_payload.alt;\nlet hdop = data.uplink_message.decoded_payload.hdop;\nlet value1 = data.uplink_message.decoded_payload.value1;\nlet value2 = data.uplink_message.decoded_payload.value2;\nlet rssi = data.uplink_message.rx_metadata[0].rssi;\nlet snr = data.uplink_message.rx_metadata[0].snr;\nlet gatewayId = data.uplink_message.rx_metadata[0].gateway_ids.gateway_id;\nlet bandwidth = data.uplink_message.settings.data_rate.lora.bandwidth;\nlet spreadingFactor = data.uplink_message.settings.data_rate.lora.spreading_factor;\nlet frequency = data.uplink_message.settings.frequency;\n\n// Construct a new message with extracted data\nmsg.payload = {\n    deviceId: deviceId,\n\tdev_eui: dev_eui,\n\tf_port: f_port,\n    applicationId: applicationId,\n\tsats: sats,\n\tlat: lat,\n\tlon: lon,\n\talt: alt, \n\thdop: hdop, \n\tvalue1: value1, \n\tvalue2: value2,\n\trssi: rssi,\n    snr: snr,\n    gatewayId: gatewayId,\n    bandwidth: bandwidth,\n    spreadingFactor: spreadingFactor,\n\tfrequency: frequency,\n};\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "dbd46a78859a2f16",
+                "0f42ae5aaa773c82"
+            ]
+        ]
+    },
+    {
+        "id": "5b8a7d080085b26c",
+        "type": "debug",
+        "z": "a0dc01a7ea27118e",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0f42ae5aaa773c82",
+        "type": "function",
+        "z": "a0dc01a7ea27118e",
+        "name": "function 2",
+        "func": "let data = msg.payload;\n\n// Note: Added dev_eui, f_port, and frequency to the list\nlet query = `\n  INSERT INTO device_telemetry (\n    deviceId, dev_eui, applicationId, f_port, \n    sats, lat, lon, alt,\n    hdop, value1, value2, rssi, snr,\n    gatewayId, bandwidth, spreadingFactor, frequency\n  ) VALUES (\n    '${data.deviceId}', '${data.dev_eui}', '${data.applicationId}', ${data.f_port},\n    ${data.sats}, ${data.lat}, ${data.lon}, ${data.alt}, \n    ${data.hdop}, ${data.value1}, ${data.value2}, ${data.rssi}, ${data.snr}, \n    '${data.gatewayId}', ${data.bandwidth}, ${data.spreadingFactor}, ${data.frequency}\n  )\n`;\n\nmsg.topic = query;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 380,
+        "wires": [
+            [
+                "6763a4a52c289a5d",
+                "7d49e5a6050c4cc3"
+            ]
+        ]
+    },
+    {
+        "id": "6763a4a52c289a5d",
+        "type": "mysql",
+        "z": "a0dc01a7ea27118e",
+        "mydb": "a90417723433ad41",
+        "name": "MyXamppDatabase",
+        "x": 690,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d49e5a6050c4cc3",
+        "type": "debug",
+        "z": "a0dc01a7ea27118e",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 280,
+        "wires": []
+    }
+]
